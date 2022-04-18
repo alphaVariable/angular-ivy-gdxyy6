@@ -12,7 +12,6 @@ export class Component1Component implements OnInit {
   constructor(private _apicaller: ApicallerService) {}
 
   ngOnInit(): void {
-    // get data from api using service
     this._apicaller.getData(2).subscribe((data: any[]) => {
       console.log(data);
       this.apiresponse = data;

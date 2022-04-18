@@ -1,25 +1,25 @@
-import { Component, OnInit } from '@angular/core';
-import { ApicallerService } from '../apicaller.service';
+    import { Component, OnInit } from '@angular/core';
+    import { ApicallerService } from '../apicaller.service';
 
-@Component({
-  selector: 'app-component2',
-  templateUrl: './component2.component.html',
-  styleUrls: ['./component2.component.css']
-})
-export class Component2Component implements OnInit {
+    @Component({
+      selector: 'app-component2',
+      templateUrl: './component2.component.html',
+      styleUrls: ['./component2.component.css']
+    })
+    export class Component2Component implements OnInit {
 
-  apiresponse: any = {};
-  constructor(
-    private _apicaller: ApicallerService
-  ) { }
+      apiresponse: any = {};
+      constructor(
+        private _apicaller: ApicallerService
+      ) { }
 
-  ngOnInit(): void {
-    // get data from api using service
-    this._apicaller.getData().subscribe(
-      (data) => {
-        this.apiresponse = data;
+      ngOnInit(): void {
+        // get data from api using service
+        this._apicaller.getData().subscribe(
+          (data) => {
+            this.apiresponse = data;
+          }
+        );
       }
-    );
-  }
 
-}
+    }

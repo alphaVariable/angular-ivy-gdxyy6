@@ -7,14 +7,15 @@ import { map, shareReplay } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class ApicallerService {
-  peopleindex:number = 1;
+  peopleindex: number = 1;
   constructor(private _http: HttpClient) {}
 
   private readonly request = this._http
-    .get('https://swapi.dev/api/people/'+this.peopleindex)
+    .get('https://swapi.dev/api/people/' + this.peopleindex)
     .pipe(shareReplay());
 
-  getData() {
+  getData(peopleindex: number = 1) {
+    this.peopleindex = peopleindex;
     return this.request;
   }
 }
